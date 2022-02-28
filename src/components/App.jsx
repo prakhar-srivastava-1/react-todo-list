@@ -23,6 +23,12 @@ function App() {
     setItem("");
   }
 
+  // function to delete the clicked item
+  // takes in id and returns array without that element
+  function deleteNote(id) {
+    console.log(id);
+  }
+
   return (
     <div className="container">
       <div className="heading">
