@@ -43,8 +43,8 @@ function App() {
       <div>
         <ul>
           {/* Render all items as <li>'s */}
-          {listItems.map((todoItem) => (
-            <ToDoItem toDoItemText={todoItem} />
+          {listItems.map((todoItem, index) => (
+            <ToDoItem key={index} toDoItemText={todoItem} onClickDelete={deleteNote} />
           ))}
         </ul>
       </div>
