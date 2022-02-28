@@ -1,5 +1,8 @@
 import React from "react";
 
+// import ToDoItem component
+import Li from "./ToDoItem.jsx";
+
 function App() {
   // start using state
   const [item, setItem] = React.useState("");
@@ -35,7 +38,7 @@ function App() {
         <ul>
           {/* Render all items as <li>'s */}
           {listItems.map((todoItem) => (
-            <li>{todoItem}</li>
+            <Li toDoItemText={todoItem} />
           ))}
         </ul>
       </div>
