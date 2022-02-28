@@ -1,7 +1,7 @@
 import React from "react";
 
 // import ToDoItem component
-import Li from "./ToDoItem.jsx";
+import ToDoItem from "./ToDoItem.jsx";
 
 function App() {
   // start using state
@@ -38,7 +38,7 @@ function App() {
         <ul>
           {/* Render all items as <li>'s */}
           {listItems.map((todoItem) => (
-            <Li toDoItemText={todoItem} />
+            <ToDoItem toDoItemText={todoItem} />
           ))}
         </ul>
       </div>

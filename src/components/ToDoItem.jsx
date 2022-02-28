@@ -1,7 +1,7 @@
 import React from "react";
 
-function Li(props) {
+function ToDoItem(props) {
   return <li>{props.toDoItemText}</li>;
 }
 
-export default Li;
+export default ToDoItem;
