@@ -5,20 +5,19 @@ function App() {
   const [item, setItem] = React.useState("");
   const [listItems, setListItem] = React.useState([]);
 
+  // Capture what has been passed to text field
   function captureItem(event) {
     const { value } = event.target;
     setItem(value);
   }
 
+  // add the captured value to existing array
   function addToList() {
+    // prevValue holds current array
     setListItem((prevValue) => {
-      console.log([...prevValue, item]);
       return [...prevValue, item];
     });
-  }
-
-  function addListTags(item) {
-    return <li>{item}</li>;
+    setItem("");
   }
 
   return (
@@ -27,13 +26,18 @@ function App() {
         <h1>To-Do List</h1>
       </div>
       <div className="form">
-        <input onChange={captureItem} type="text" />
+        <input onChange={captureItem} type="text" value={item} />
         <button onClick={addToList}>
           <span>Add</span>
         </button>
       </div>
       <div>
-        <ul>{listItems.map(addListTags)}</ul>
+        <ul>
+          {/* Render all items as <li>'s */}
+          {listItems.map((todoItem) => (
+            <li>{todoItem}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
