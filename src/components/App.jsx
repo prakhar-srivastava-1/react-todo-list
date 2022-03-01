@@ -26,7 +26,10 @@ function App() {
   // function to delete the clicked item
   // takes in id and returns array without that element
   function deleteNote(id) {
-    console.log(id);
+    const newList = listItems.filter((value, index) => {
+      return index !== id;
+    });
+    setListItem(newList);
   }
 
   return (
